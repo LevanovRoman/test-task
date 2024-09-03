@@ -27,9 +27,6 @@ public class ContactInfoServiceImpl implements ContactInfoService{
     public ContactInfoDto getContactInfoById(Long id) {
         Customer customer = customerRepository.findById(id).orElseThrow(() ->
                 new CustomerNotFoundException("Пользователь с ID " + id + " не существует."));
-//        ContactInfoDto contactInfoDto = new ContactInfoDto(customer.getLastName(),
-//                customer.getFirstName(), customer.getPatronymic(), customer.getEmail(),
-//                customer.getPhoneNumber());
         return mapCustomerToContactInfo(customer);
     }
 

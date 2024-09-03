@@ -50,13 +50,13 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     public void saveCustomer(Customer customer, CustomerDto customerDto){
-        customer.setFirstName(customerDto.firstName());
-        customer.setLastName(customerDto.lastName());
-        customer.setEmail(customerDto.email());
-        customer.setPatronymic(customerDto.patronymic());
-        customer.setBirthDate(customerDto.birthDate());
-        customer.setPhoneNumber(customerDto.phoneNumber());
-        customer.setPhoto(customerDto.photo());
+        customer.setFirstName(customerDto.getFirstName());
+        customer.setLastName(customerDto.getLastName());
+        customer.setEmail(customerDto.getEmail());
+        customer.setPatronymic(customerDto.getPatronymic());
+        customer.setBirthDate(customerDto.getBirthDate());
+        customer.setPhoneNumber(customerDto.getPhoneNumber());
+        customer.setPhoto(customerDto.getPhoto());
         customerRepository.save(customer);
     }
 }

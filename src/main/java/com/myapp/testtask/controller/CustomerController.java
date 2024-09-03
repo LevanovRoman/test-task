@@ -2,7 +2,9 @@ package com.myapp.testtask.controller;
 
 import com.myapp.testtask.dto.CustomerDto;
 import com.myapp.testtask.entity.Customer;
+import com.myapp.testtask.exception.CustomerNotFoundException;
 import com.myapp.testtask.service.CustomerService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +30,7 @@ public class CustomerController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Customer> createCustomer(@RequestBody CustomerDto customerDto){
+    public ResponseEntity<Customer> createCustomer(@RequestBody @Valid CustomerDto customerDto){
         return ResponseEntity.ok(customerService.createCustomer(customerDto));
     }
 
