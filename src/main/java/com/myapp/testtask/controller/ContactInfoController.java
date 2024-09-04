@@ -4,12 +4,14 @@ import com.myapp.testtask.dto.ContactInfoDto;
 import com.myapp.testtask.dto.CustomerDto;
 import com.myapp.testtask.entity.Customer;
 import com.myapp.testtask.service.ContactInfoService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "methods for contact info")
 @RestController
 @RequestMapping("/api/contact-info")
 @RequiredArgsConstructor
